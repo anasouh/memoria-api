@@ -1,0 +1,6 @@
+fastapi~=0.115.8
+ffmpeg
+python-multipart
+openai-whisper
+setuptools-rust
+pytesseract~=0.3.13
