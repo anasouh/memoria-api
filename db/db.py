@@ -1,6 +1,7 @@
 import redis
+from core import settings
 
-redis_client = redis.Redis(host="localhost", port=6379, db=0)
+redis_client = redis.Redis(host=settings.REDIS_HOST, db=settings.REDIS_DB, port=settings.REDIS_PORT)
 
 
 def get_key(key):
