@@ -8,8 +8,8 @@ router = APIRouter()
 
 @router.post("/video")
 async def upload_video(file: UploadFile):
-    if file.content_type != "video/mp4":
-        return {"error": "Only MP4 files are supported"}
+    if not file.content_type.startswith("video/"):
+        return {"error": "Only video files are supported"}
 
     file_path = save_temp_file(file)
     transcription = await transcribe_video(file_path)

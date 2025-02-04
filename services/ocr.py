@@ -12,6 +12,7 @@ async def extract_text_from_image(file_path: str) -> str:
         return get_key(file_hash)
 
     text = image_to_string(file_path)
+    text = text.replace("\n", " ")
     set_key(file_hash, text)
 
     os.remove(file_path)
